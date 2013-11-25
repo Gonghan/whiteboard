@@ -55,17 +55,8 @@
   <% end %>
 </table>
 <% if deliverable.attachment_versions.length>1 %>
-    <a id="show_all_assignments"><label >Show all <span><%= deliverable.attachment_versions.length %></span> assignments</label></a>
+    <a id="show_all_assignments"><label >Show all assignment</label></a>
 <% end %>
-<script>
-    function updateAllAssignments() {
-        $('#allAssignments').show();
-        $('#show_all_assignments').hide();
-    }
-    $(document).on('click', '#show_all_assignments', updateAllAssignments);
-</script>
-
-
 <%= form_for deliverable, :html => {:multipart => true}, :url => {:action => :update_feedback, :id => deliverable} do |f| %>
     <div>
       <% if grade_type_points_or_weights == "Percentage" %>
